@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="main container">
+        <div class="row well">
+            <div class="col-md-6">
+                <div class="page-header">
+                    <h2>Agregar Producto</h2>
+                </div>
+
+                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre'} }) }}
+                    <span class="text-danger">{{ form_errors(form.name) }}</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.code) }}
+                    {{ form_widget(form.code, {'attr': {'class': 'form-control', 'placeholder' : 'Codigo'}}) }}
+                    <span class="text-danger">{{ form_errors(form.code) }}</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder' : 'Descripcion'}}) }}
+                    <span class="text-danger">{{ form_errors(form.description) }}</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.brand) }}
+                    {{ form_widget(form.brand, {'attr': {'class': 'form-control', 'placeholder' : 'Marca'}}) }}
+                    <span class="text-danger">{{ form_errors(form.brand) }}</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.category) }}
+                    {{ form_widget(form.category, {'attr': {'class': 'form-control', 'placeholder' : 'Categoria'}}) }}
+                    <span class="text-danger">{{ form_errors(form.category) }}</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.price) }}
+                    {{ form_widget(form.price, {'attr': {'class': 'form-control', 'placeholder' : 'Precio'}}) }}
+                    <span class="text-danger">{{ form_errors(form.price) }}</span>
+                </div>
+
+
+                </fieldset>
+
+                <p>
+                    {{ form_widget(form.save, {'label' : 'Crear Producto', 'attr': {'class': 'btn btn-success'}}) }}
+                </p>
+
+                {{ form_end(form) }}
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
